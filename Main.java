@@ -1,32 +1,50 @@
+
 import java.util.Scanner;
 
-class Main {
-  public static void main(String[] args) {
-   
-		int num1, num2, soma, subtracao, multiplicacao, divisao;
+public class Main {
+    public static void main(String[] args) {
 
-		System.out.println("Insira o primeiro numero: ");
-		Scanner n1 = new Scanner(System.in);
-		num1 = n1.nextInt();
+        int operacao;
+        double num1;
+        double num2;
 
-		System.out.println("Insira o segundo numero: ");
-		Scanner n2 = new Scanner(System.in);
-		num2 = n2.nextInt();
+        Scanner calc = new Scanner(System.in);
 
-		soma = num1 + num2;
-		System.out.println("O resultado da soma é: " + soma);
+        System.out.println("***************INSTRUÇÕES*****************");
 
-		subtracao = num1 - num2;
-		System.out.println("O resultado da subtração é: " + subtracao);
+        System.out.println("Digite 1 para somar.");
+        System.out.println("Digite 2 para subtrair.");
+        System.out.println("Digite 3 para multiplicar.");
+        System.out.println("Digite 4 para dividir.");
 
-		multiplicacao = num1 * num2;
-		System.out.println("O resultado da multiplicação é: " + subtracao);
+        System.out.println("******************************************");
 
-		divisao = num1 * num2;
-		System.out.println("O resultado da divisão é: " + subtracao);
+        System.out.println("QUAL OPERAÇÃO DESEJA CALCULAR: ");
 
-		System.out.println("");
+        operacao = calc.nextInt();
 
-		System.out.println("               *********FIM***********");
-  }
+        System.out.println("Digite o primeiro número: ");
+        num1 = calc.nextDouble();
+
+        System.out.println("Digite o segundo número: ");
+        num2 = calc.nextDouble();
+
+        if (operacao == 1) {
+            System.out.println ("A SOMA É IGUAL A: "+(num1 + num2));
+        } else {
+            if (operacao == 2) {
+                System.out.println("A SUBTRAÇÃO É IGUAL A: "+(num1 - num2));
+            } else {
+                if (operacao == 3) {
+                    System.out.println("A MULTIPLICAÇÃO É IGUAL A: "+(num1 * num2));
+                } else {
+                    if (operacao == 4) {
+                        System.out.println("A DIVISÃO É IGUAL A: "+(num1 / num2));
+                    } else {
+                        System.out.println("OPERAÇÃO INVALIDA - Refaça a operação do inicio");
+                    }
+                }
+            }
+        }
+    }
 }
